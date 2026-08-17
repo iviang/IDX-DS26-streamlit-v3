@@ -262,7 +262,7 @@ def predict_with_router(onehot_df: pd.DataFrame, native_df: pd.DataFrame):
 
 
 # User interface
-st.title("🏠 California Home Price Router")
+st.title("🏠 California Home Price Predictor")
 st.write(
     "Enter a property address and its characteristics. The app estimates the "
     "price band, then switches to the model intended for that band."
