@@ -286,15 +286,15 @@ with st.form("prediction_form"):
     col1, col2 = st.columns(2)
 
     with col1:
-        living_area = st.number_input("Living area (sq ft)", min_value=1, value=1800, step=50)
+        living_area = st.number_input("Living area (sq ft)", min_value=1, value=1409, step=50)
 
         lot_unit = st.radio("Lot size unit", ["Acres", "Square feet"], horizontal=True)
         if lot_unit == "Acres":
             lot_size_acres = st.number_input("Lot size (acres)", min_value=0.0001,
-                                             value=0.15, step=0.01, format="%g",
+                                             value=0.138, step=0.01, format="%g",
                                              key="lot_acres")
         else:
-            lot_sqft = st.number_input("Lot size (sq ft)", min_value=1, value=6534,
+            lot_sqft = st.number_input("Lot size (sq ft)", min_value=1, value=6018,
                                        step=100, key="lot_sqft")
             lot_size_acres = lot_sqft / 43560.0  # 43,560 sq ft = 1 acre
             st.caption(f"≈ {lot_size_acres:g} acres")
@@ -303,7 +303,7 @@ with st.form("prediction_form"):
         bathrooms = st.number_input("Bathrooms", min_value=0, value=2, step=1)
 
     with col2:
-        year_built = st.number_input("Year built", min_value=1800, max_value=2100, value=1990, step=1)
+        year_built = st.number_input("Year built", min_value=1800, max_value=2100, value=1968, step=1)
         stories = st.number_input("Stories", min_value=0, value=1, step=1)
         garage_spaces = st.number_input("Garage spaces", min_value=0, value=2, step=1)
         parking_total = st.number_input("Total parking spaces", min_value=0, value=2, step=1)
